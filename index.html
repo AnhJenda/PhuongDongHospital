@@ -39,6 +39,41 @@
           .nav-icon-responsive, .nav-icon-close-btn{
             display: none;
           }
+          .phone {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+
+            letter-spacing: 0.1px;
+
+            color: #FFFFFF;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+          }
+          .swiper-container {
+            width: 100%;
+            height: 100%;
+            }
+
+            .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
           @media (max-width: 767px) {
             .nav-container{
                 display: flex;
@@ -65,16 +100,20 @@
                 text-align: left;
                 transition: 0.4s;
                 transform: translateX(-100%);
-                padding-top: 36px;
+                padding-top: 44px;
                 padding-left: 24px;
                 background: linear-gradient(311.76deg, #d4e7fe -15.24%, #ffffff 78.85%);
+                z-index: 9999;
             }
             .nav-list.active {
                 transform: translateX(0);
                 margin-left: 0;
             }
             .phone{
-                display: none;
+                display: block;
+                position: absolute;
+                top: 12px;
+                left: 20%;
             }
             .nav-icon-close-btn {
                 display: flex;
@@ -83,8 +122,9 @@
                 top: 0;
                 justify-content: flex-end;
                 cursor: pointer;
-                font-size: 30px;
+                font-size: 20px;
                 padding: 15px;
+                margin-top: -10px;
             }
           }
         }
@@ -118,7 +158,13 @@
         </div>
 
         <div class="header--banner">
-            <img src="assets/image/headerbanner.png" alt="header banner">
+            <swiper-container class="mySwiper" navigation="true">
+                <swiper-slide><img src="assets/image/headerbanner.png" alt="header banner"></swiper-slide>
+                <swiper-slide><img src="assets/image/headerbanner.png" alt="header banner"></swiper-slide>
+                <swiper-slide><img src="assets/image/headerbanner.png" alt="header banner"></swiper-slide>
+                <swiper-slide><img src="assets/image/headerbanner.png" alt="header banner"></swiper-slide>
+              </swiper-container>
+            
         </div>
         
         <div class="offers max-w-[86.7%] ml-64 mt-24 flex">
@@ -141,5 +187,6 @@
 
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </body>
 </html>

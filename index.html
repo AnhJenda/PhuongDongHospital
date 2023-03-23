@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuong Dong Hospital</title>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                '3xl': {'max': '1919px'},
+
+                '2xl': {'max': '1535px'},
+                // => @media (max-width: 1535px) { ... }
+
+                'xl': {'max': '1279px'},
+                // => @media (max-width: 1279px) { ... }
+
+                'lg': {'max': '1023px'},
+                // => @media (max-width: 1023px) { ... }
+
+                'md': {'max': '767px'},
+                // => @media (max-width: 767px) { ... }
+
+                'sm': {'max': '639px'},
+                // => @media (max-width: 639px) { ... }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .container {
+            max-width: 1920px;
+          }
+          .nav-icon-responsive, .nav-icon-close-btn{
+            display: none;
+          }
+          @media (max-width: 767px) {
+            .nav-container{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 16px;
+            }
+            .nav-icon-responsive   {
+                display: block;
+                cursor: pointer;
+                float: left;
+            }
+            .nav-list {
+                width: 240px;
+                display: flex;
+                flex-direction: column;
+                /* width: fit-content !important; */
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                height: 100vh;
+                gap: 10px;
+                justify-content: flex-start !important;
+                text-align: left;
+                transition: 0.4s;
+                transform: translateX(-100%);
+                padding-top: 36px;
+                padding-left: 24px;
+                background: linear-gradient(311.76deg, #d4e7fe -15.24%, #ffffff 78.85%);
+            }
+            .nav-list.active {
+                transform: translateX(0);
+                margin-left: 0;
+            }
+            .phone{
+                display: none;
+            }
+            .nav-icon-close-btn {
+                display: flex;
+                position: absolute;
+                right: 0;
+                top: 0;
+                justify-content: flex-end;
+                cursor: pointer;
+                font-size: 30px;
+                padding: 15px;
+            }
+          }
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-container 3xl:max-w-[91.33%] 2xl:max-w-[95%] xl:max-w-[95%] lg:max-w-[90%] md:max-w-[100%] mx-auto xl:mx-auto md:mx-0 my-4 flex justify-center">
+            <div class="nav-icon-responsive">
+                <a id="barsBtn"><i class="fa-solid fa-bars"></i></a>
+              </div>
+            <div class="logo 2xl:w-44 xl:w-36 lg:w-32 md:w-28">
+                <a href="index.html"><img src="assets/image/Logo 1.png" alt="logo"></a>
+            </div>
+            <ul class="flex mx-24 font-medium 2xl:mx-16 xl:mx-8 lg:mx-2 md:mx-1 nav-list">
+                <div class="nav-icon-close-btn">
+                    <a id="closeBtn"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Ưu đãi</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Dịch vụ</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Giới thiệu</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Đội ngũ bác sĩ</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Bảng giá</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Thư viện</a></li>
+                <li class="mx-7 2xl:mx-5 xl:mx-1 lg:mx-1 md:mx-0.5"><a href="#">Liên hệ</a></li>
+            </ul>
+            <div class="phone text-white bg-orange-500 rounded-3xl px-1 py-2">
+                <i width="17px" height="17px" class="fa-solid fa-phone"></i>
+                <a class="font-medium" href="tel:1900 1806">Hotline: 1900 1806</a>
+            </div>
+        </div>
+
+        <div class="header--banner">
+            <img src="assets/image/headerbanner.png" alt="header banner">
+        </div>
+        
+        <div class="offers max-w-[86.7%] ml-64 mt-24 flex">
+            <div class="offers--heading max-w-md">
+                <h3 class="font-medium text-4xl">Chương trình ưu đãi:</h3>
+                <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit lis iaculis ac felis porta. Vulputate tellus sapien pat sit ipsum molestie pharetran da volutpat semper.</p>
+            </div>
+            <div class="offers-slide" id="offers-slide">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/image/offers-slide-item.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
